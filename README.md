@@ -1,1 +1,1 @@
-# kainoajim.github.io
+Hey. I'm Kainoa!
