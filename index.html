@@ -3,25 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
+    <title>Your Name - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header Section -->
     <header>
-        <h1>Welcome to My Website</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <h1>Your Name</h1>
     </header>
-    <main>
-        <h2>About Me</h2>
-        <p>Hello! I’m a computer science graduate from Boston College...</p>
-    </main>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-content">
+            <img src="your-photo.jpg" alt="Your Name">
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>Hello! I’m a computer science graduate from Boston College, currently seeking a software engineering position. I specialize in [your specialties or interests].</p>
+                <a href="resume.pdf" class="resume-link" download>Download My Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project">
+            <img src="project1.jpg" alt="Project 1">
+            <div class="project-description">
+                <h3>Project 1</h3>
+                <p>Description of project 1.</p>
+            </div>
+        </div>
+        <div class="project">
+            <img src="project2.jpg" alt="Project 2">
+            <div class="project-description">
+                <h3>Project 2</h3>
+                <p>Description of project 2.</p>
+            </div>
+        </div>
+        <!-- Add more projects as needed -->
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="your-server-side-code" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
     <footer>
         <p>© 2024 Your Name</p>
     </footer>
