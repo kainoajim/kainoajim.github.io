@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Betting Model</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light">
+    <header class="header center">
+        <h3><a href="index.html" class="link">Kainoa Jim</a></h3>
+        <nav class="nav center">
+            <ul class="nav__list center">
+                <li class="nav__list-item"><a class="link link--nav" href="index.html#projects">Projects</a></li>
+                <li class="nav__list-item"><a class="link link--nav" href="index.html#skills">Skills</a></li>
+                <li class="nav__list-item"><a class="link link--nav" href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section">
+            <h2>NBA Betting Model</h2>
+            <p>
+                I've been an avid fan of the NBA for a while, and I consistently watch multiple games per week during the season. I have attempted to sports bet with limited success, so I wondered if it would be possible to make a model that could accurately predict scores of upcoming games. This was unlike any project I'd done before, so I was able to learn and implement new technologies as I went along. 
+            </p>
+            <br>
+            <h3>Skills and Technologies Used</h3>
+            <ul>
+                <li>Python</li>
+                <li>BeautifulSoup</li>
+                <li>Selenium</li>
+                <li>Pandas</li>
+                <li>Scikit-learn</li>
+                <li>Git</li>
+            </ul>
+            <br>
+            <h3>Project Details</h3>
+            <p>
+                To collect historical data, I chose to scrape historical box scores from basketball reference. I was able to find scrape urls for every box score for each season using BeautifulSoup, and continued by scraping all team stats from each of those games. Then, I cleaned up the data by removing columns irrelevant to team stats, such as game score or +/-, as well as removing empty rows from my dataset.
+            </p>
+            <br>
+            <p>
+                Next, I had to collect historical betting data. I found this to be more difficult, as sites such as DraftKings don't make it easy to access historical data. I found a website where these historical spreads and totals were hidden behind some javascript, so I wasn't able to use BeautifulSoup like I did with the box scores. Instead, I used selenium to iterate through every day in the NBA season, open the url in an automated browser, and pull the DraftKings odds for each game on that day. Then, using Pandas, I matched each game's odds with the box score data I had for the same game. 
+            </p>
+            <br>
+            <p>
+                Now I had to prepare my dataset for training. I decided to use rolling averages as the input for each game, as with predicting future matchups I only have data from before the game. So I prepared my dataset on a 10-game rolling average for each stat and advanced stat.  
+            </p>
+            <br>
+            <h3>Outcome</h3>
+            <p>
+                With scikit-learn, I tested out many different training models, and settled on RandomForestRegression, as it gave me the highest spread and totals accuracy of 51% and 52% respectively. I am excited to test this model with the upcoming NBA season.
+            </p>
+            <br>
+            <h3>Next Steps</h3>
+            <p>
+                Despite having a working model that predicts over 50% correct, there are more features that I want to add. Injury reports, rest day advantage, and individual player stats are all things I believe can greatly improve the accuracy of my model, but will require time to implement. Nonetheless, I have enjoyed this project so far, and motivated to continue improving it.
+            </p>
+
+            <br>
+            <a href="https://github.com/kainoajim/bettingalgo" class="btn btn--outline" target="_blank">View on GitHub</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2024 Kainoa Jim</p>
+    </footer>
+</body>
+</html>
